@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
      <h1>Workout Tracker</h1>
+     <p>Refresh the page to see persisted state! 🙃 </p>
      <Workouts/>
     </div>
   );

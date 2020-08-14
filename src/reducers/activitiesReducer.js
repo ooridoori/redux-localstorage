@@ -27,6 +27,9 @@ const activitiesReducer = (state = initialState, action) => {
             const i = copyState.findIndex(x => x.id === payload.id);
             copyState.splice(i, 1);
             return [...copyState]
+        case"CLEAR_ACTIVITIES":
+            localStorage.clear()
+            return initialState;
         default:
             return state;
     }

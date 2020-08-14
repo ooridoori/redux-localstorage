@@ -6,6 +6,20 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from "react-redux";
 import store from "./store";
 
+//Save to localStorage
+const saveToLocalStorage = (state) => {
+  //depending on the browser settings (i.e privacy mode) it wont store to local storage so we need to catch the error
+  try {
+      const serializedState = JSON.stringify(state);
+      localStorage.setItem('state', serializedState);
+  } catch (e) {
+      console.log(e)
+  }
+}
+
+//every time store changes update localstorage
+store.subscribe(() => saveToLocalStorage(store.getState()))
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

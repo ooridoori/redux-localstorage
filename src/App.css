@@ -1,8 +1,11 @@
-.App h1 {
+.App h1, p {
   text-align: center;
 }
 .App .workouts-wrapper {
   margin-left: 30px;
+}
+.App button {
+  margin-right: 12px;
 }
 .App .workouts-wrapper .activity-wrapper {
   display: flex;

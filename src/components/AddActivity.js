@@ -13,8 +13,6 @@ const AddActivity = () => {
         setData(prev => ({ ...prev, [e.target.name]: e.target.value}))
     }
 
-    console.log('data', data)
-
     const addActivity = () => {
         //put state data into activities reducer => store
         dispatch({
