@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import storeJS from "store-js";
 
 const initialState = [
     {
@@ -28,7 +29,8 @@ const activitiesReducer = (state = initialState, action) => {
             copyState.splice(i, 1);
             return [...copyState]
         case"CLEAR_ACTIVITIES":
-            localStorage.clear()
+            storeJS.clearAll()
+            //localStorage.clear()
             return initialState;
         default:
             return state;

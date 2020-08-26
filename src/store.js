@@ -1,13 +1,15 @@
 import { createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from "./reducers/rootReducer";
+import storeJS from "store-js";
 
 //Load from localStorage
 
 const loadFromLocalStorage = () => {
     //depending on the browser settings (i.e privacy mode) it wont store to local storage so we need to catch the error
     try {
-      const serializedState = localStorage.getItem('state');
+      const serializedState = storeJS.get('state');
+      //const serializedState = localStorage.getItem('state');
       if (serializedState === null) return undefined;
       return JSON.parse(serializedState)
     } catch (e) {
